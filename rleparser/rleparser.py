@@ -29,6 +29,16 @@ class RLEParser:
         print() 
     def _parseheader(self,line):
         things = line.split(",")
+        for thing in things:
+            thing = thing.strip()
+            thing = thing.split("=")
+            thing = [u.strip() for u in thing if u.strip() != ""]
+            if thing[0] == "x":
+                self.width = int(thing[1])
+            elif thing[0] == "y":
+                self.height = int(thing[1])
+            elif self.height == "rule":
+                print(thing[1])
         print(things)
     def parse(self,inp):
         self.input = inp.strip().split("!")[0].split("\n")
