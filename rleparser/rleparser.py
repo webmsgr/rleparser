@@ -36,6 +36,8 @@ class RLEParser:
             self.parsed.append(t)
         blank = " "*self.width + "\n"
         print(blank*(self.height-linefound))
+        blankd = [False]*self.width
+        self.parsed += [blankd]*(self.height-linefound)
     def _parseheader(self,line):
         things = line.split(",")
         for thing in things:
