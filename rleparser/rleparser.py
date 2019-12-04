@@ -55,9 +55,9 @@ class RLEParser:
                     selectn = rule.pop(0)
                     print("{} -> {}".format(selectn,rule))
                     if selectn.lower() == "b":
-                        self.liverules = rules
+                        self.liverules = rule
                     else:
-                        self.deathrules = rules
+                        self.deathrules = rule
                 
         #print(things)
     def parse(self,inp):
