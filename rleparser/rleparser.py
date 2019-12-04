@@ -37,7 +37,7 @@ class RLEParser:
                 self.width = int(thing[1])
             elif thing[0] == "y":
                 self.height = int(thing[1])
-            elif self.height == "rule":
+            elif thing[0] == "rule":
                 rules = thing[1].split("/")
                 for rule in rules:
                     rule = list(rule)
