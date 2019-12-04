@@ -4,6 +4,23 @@ class RLEParser:
         self.parsed = []
         self.input = []
         self.complete = False
+    def _parsedataline(self,line):
+        lines = line.split("$")
+        for line in lines:
+            amt = ""
+            for char in line:
+                if char in "bo":
+                    if amt == "":
+                        amt = "1"
+                    amountof = int(amt)
+                    print("{}x{}".format(char,amountof))
+                    amt = ""
+                elif char == "!":
+                    pass
+                elif char in "0123456789":
+                    amt += char
+                else:
+                    pass
     def parse(self,inp):
         self.input = inp.strip().split("\n")
         hasmet = False
