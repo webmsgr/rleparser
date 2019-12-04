@@ -1,0 +1,3 @@
+
+def parsestring(inp):
+    pass
