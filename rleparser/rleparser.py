@@ -43,6 +43,7 @@ class RLEParser:
                 else:
                     hasmet = True
                     print("Header: {}".format(line))
+                    self._parseheader(line)
 def main():
     data = open("glidergun.rle").read()
     parser = RLEParser()
