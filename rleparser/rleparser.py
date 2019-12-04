@@ -52,7 +52,12 @@ class RLEParser:
                 rules = thing[1].split("/")
                 for rule in rules:
                     rule = list(rule)
-                    print("{} -> {}".format(rule.pop(0),rule))
+                    selectn = rule.pop(0)
+                    print("{} -> {}".format(selectn,rule))
+                    if selectn.lower() == "b":
+                        self.liverules = rules
+                    else:
+                        self.deathrules = rules
                 
         #print(things)
     def parse(self,inp):
