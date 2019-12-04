@@ -13,6 +13,7 @@ class RLEParser:
         linefound = 0
         for line in lines:
             amt = ""
+            t = []
             linefound += 1
             foundthis = 0
             for char in line:
@@ -20,7 +21,8 @@ class RLEParser:
                     if amt == "":
                         amt = "1"
                     amountof = int(amt)
-                    print(char*amountof,end="")
+                    print((" " if char == "b" else "o")*amountof,end="")
+                    t += [char=="o"]*amountof
                     foundthis += amountof
                     amt = ""
                 elif char == "!":
@@ -29,9 +31,11 @@ class RLEParser:
                     amt += char
                 else:
                     pass
-            print("b"*(self.width-foundthis))
-        blank = "b"*self.width + "\n"
-        print(blank*(self.height-linefound)) 
+            print(" "*(self.width-foundthis))
+            t += [False]*(self.width-foundthis)
+            self.parsed.append(t)
+        blank = " "*self.width + "\n"
+        print(blank*(self.height-linefound))
     def _parseheader(self,line):
         things = line.split(",")
         for thing in things:
