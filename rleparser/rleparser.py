@@ -22,6 +22,7 @@ class RLEParser:
                     amt += char
                 else:
                     pass
+        print()     
     def parse(self,inp):
         self.input = inp.strip().split("!")[0].split("\n")
         hasmet = False
