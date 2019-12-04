@@ -30,6 +30,7 @@ class RLEParser:
             else:
                 if hasmet:
                     print("Data line: {}".format(line))
+                    self._parsedataline(line)
                 else:
                     hasmet = True
                     print("Header: {}".format(line))
