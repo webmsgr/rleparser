@@ -18,7 +18,7 @@ class RLEParser:
                     print("Header: {}".format(line))
 def main():
     data = open("glider.rle").read()
-    parser.RLEParser()
+    parser = RLEParser()
     parser.parse(data)
 if __name__ == "__main__":
     main()
