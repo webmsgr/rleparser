@@ -17,13 +17,13 @@ class RLEParser:
                     print(char*amountof,end="")
                     amt = ""
                 elif char == "!":
-                    return
+                    pass
                 elif char in "0123456789":
                     amt += char
                 else:
                     pass
     def parse(self,inp):
-        self.input = inp.strip().split("\n")
+        self.input = inp.strip().split("!")[0].split("\n")
         hasmet = False
         for line in self.input:
             if line.strip()[0] == "#":
