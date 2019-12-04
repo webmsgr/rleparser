@@ -31,6 +31,7 @@ class RLEParser:
         things = line.split(",")
         for thing in things:
             thing = thing.strip()
+            print(thing)
             thing = thing.split("=")
             thing = [u.strip() for u in thing if u.strip() != ""]
             if thing[0] == "x":
