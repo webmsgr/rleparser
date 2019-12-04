@@ -10,15 +10,18 @@ class RLEParser:
         self.complete = False
     def _parsedataline(self,line):
         lines = line.split("$")
+        linefound = 0
         for line in lines:
             amt = ""
-            print()
+            linefound += 1
+            foundthis = 0
             for char in line:
                 if char in "bo":
                     if amt == "":
                         amt = "1"
                     amountof = int(amt)
                     print(char*amountof,end="")
+                    foundthis += amountof
                     amt = ""
                 elif char == "!":
                     pass
@@ -26,7 +29,9 @@ class RLEParser:
                     amt += char
                 else:
                     pass
-        print() 
+            print("b"*(self.width-foundthis))
+        blank = "b"*self.width + "\n"
+        print(blank*(self.height-linefound)) 
     def _parseheader(self,line):
         things = line.split(",")
         for thing in things:
