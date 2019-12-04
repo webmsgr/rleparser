@@ -8,12 +8,13 @@ class RLEParser:
         lines = line.split("$")
         for line in lines:
             amt = ""
+            print()
             for char in line:
                 if char in "bo":
                     if amt == "":
                         amt = "1"
                     amountof = int(amt)
-                    print("{}x{}".format(char,amountof))
+                    print(char*amountof)
                     amt = ""
                 elif char == "!":
                     pass
