@@ -3,6 +3,10 @@ class RLEParser:
     def __init__(self):
         self.parsed = []
         self.input = []
+        self.deathrules = []
+        self.liverules = []
+        self.width = 0
+        self.height = 0
         self.complete = False
     def _parsedataline(self,line):
         lines = line.split("$")
@@ -22,7 +26,10 @@ class RLEParser:
                     amt += char
                 else:
                     pass
-        print()     
+        print() 
+    def _parseheader(self,line):
+        things = line.split(",")
+        print(things)
     def parse(self,inp):
         self.input = inp.strip().split("!")[0].split("\n")
         hasmet = False
