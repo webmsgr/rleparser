@@ -17,7 +17,7 @@ class RLEParser:
                     print(char*amountof,end="")
                     amt = ""
                 elif char == "!":
-                    pass
+                    return
                 elif char in "0123456789":
                     amt += char
                 else:
