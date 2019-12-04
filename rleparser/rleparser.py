@@ -14,7 +14,7 @@ class RLEParser:
                     if amt == "":
                         amt = "1"
                     amountof = int(amt)
-                    print(char*amountof)
+                    print(char*amountof,end="")
                     amt = ""
                 elif char == "!":
                     pass
