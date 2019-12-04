@@ -31,7 +31,6 @@ class RLEParser:
         things = line.split(",")
         for thing in things:
             thing = thing.strip()
-            print(thing)
             thing = thing.split("=")
             thing = [u.strip() for u in thing if u.strip() != ""]
             if thing[0] == "x":
@@ -40,7 +39,7 @@ class RLEParser:
                 self.height = int(thing[1])
             elif self.height == "rule":
                 print(thing[1])
-        print(things)
+        #print(things)
     def parse(self,inp):
         self.input = inp.strip().split("!")[0].split("\n")
         hasmet = False
@@ -59,5 +58,6 @@ def main():
     data = open("glidergun.rle").read()
     parser = RLEParser()
     parser.parse(data)
+    print(parser.__dict__)
 if __name__ == "__main__":
     main()
